@@ -1,18 +1,18 @@
-# Linear 中文翻译
+# Linear Chinese Translator
 
-Firefox 插件：在 [Linear](https://linear.app) 的 ticket 页面标题旁加一个"译"按钮，点击后用 DeepSeek 把标题、正文和评论翻译成中文，在弹窗中显示，保留原有格式。
+A Firefox extension that adds a "译" button next to the title on [Linear](https://linear.app) issue pages. Clicking it translates the title, description, and comments into Simplified Chinese with DeepSeek and shows the result in a closable dialog, keeping the original formatting.
 
-## 安装
+## Install
 
-- 临时安装：打开 `about:debugging#/runtime/this-firefox`，点"临时载入附加组件…"，选 `manifest.json`。
-- 永久安装：在 [addons.mozilla.org/developers](https://addons.mozilla.org/developers/) 以"On your own"方式提交签名，下载签名后的 `.xpi` 安装。
+- Temporary: open `about:debugging#/runtime/this-firefox`, click "Load Temporary Add-on…", and select `manifest.json`. Firefox removes it on restart.
+- Permanent: submit the package at [addons.mozilla.org/developers](https://addons.mozilla.org/developers/) as "On your own" (unlisted), then install the signed `.xpi`.
 
-打包：
+Build the package:
 
 ```bash
 zip -r linear-translate.xpi manifest.json background.js content.js panel.css options.html options.js icon.svg
 ```
 
-## 设置
+## Settings
 
-在 `about:addons` 打开插件选项，填入 DeepSeek API key，模型默认 `deepseek-chat`。API key 只保存在本机浏览器里。
+Open the extension's options in `about:addons` and enter your DeepSeek API key. The model defaults to `deepseek-chat`. The key is stored only in your local browser profile.
