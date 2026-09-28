@@ -1,0 +1,46 @@
+#lt-toggle {
+  float: right; margin: 4px 0 0 8px;
+  padding: 1px 8px; border: 1px solid currentColor; border-radius: 4px;
+  background: transparent; color: inherit; opacity: .45;
+  font: 12px/18px system-ui, sans-serif; cursor: pointer;
+}
+#lt-toggle:hover { opacity: .9; }
+#lt-toggle:disabled { cursor: wait; }
+
+#lt-overlay {
+  position: fixed; inset: 0; z-index: 2147483647;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0, 0, 0, .45);
+}
+#lt-overlay[hidden] { display: none; }
+#lt-dialog {
+  position: relative; box-sizing: border-box;
+  width: min(1000px, calc(100vw - 32px)); max-height: calc(100vh - 64px); overflow-y: auto;
+  padding: 32px 40px; border-radius: 10px;
+  background: #fff; color: #1f2023; box-shadow: 0 12px 48px rgba(0, 0, 0, .35);
+  font: 15px/1.75 system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  #lt-dialog { background: #1f2023; color: #e6e6e6; }
+}
+#lt-close {
+  position: sticky; top: 0; float: right; margin: -16px -24px 0 0;
+  width: 32px; height: 32px; border: 0; border-radius: 6px;
+  background: transparent; color: inherit; opacity: .5; font-size: 22px; cursor: pointer;
+}
+#lt-close:hover { opacity: 1; background: rgba(128, 128, 128, .15); }
+#lt-content section + section { border-top: 1px solid rgba(128, 128, 128, .25); margin-top: 20px; padding-top: 20px; }
+#lt-content h1 { font-size: 24px; margin: 0 0 8px; }
+#lt-content h2 { font-size: 19px; margin: 18px 0 8px; }
+#lt-content h3 { font-size: 16px; margin: 14px 0 6px; }
+#lt-content p { margin: 0 0 10px; }
+#lt-content ul, #lt-content ol { padding-left: 24px; margin: 0 0 10px; }
+#lt-content li p { margin: 0; }
+#lt-content a { color: #5e6ad2; }
+#lt-content code { background: rgba(128, 128, 128, .15); border-radius: 3px; padding: 1px 4px; font: 13px ui-monospace, monospace; }
+#lt-content pre { background: rgba(128, 128, 128, .15); border-radius: 6px; padding: 10px 12px; overflow-x: auto; }
+#lt-content pre code { padding: 0; background: none; }
+#lt-content blockquote { border-left: 3px solid #5e6ad2; margin: 0 0 10px; padding-left: 12px; opacity: .8; }
+#lt-content img { max-width: 100%; }
+#lt-content table { border-collapse: collapse; margin-bottom: 10px; width: 100%; }
+#lt-content th, #lt-content td { border: 1px solid rgba(128, 128, 128, .3); padding: 6px 10px; text-align: left; vertical-align: top; }
